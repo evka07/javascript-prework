@@ -1,5 +1,4 @@
-let computerMove = `kamień`;
-let playerMove = 'papier';
+
 
 function printMessage('Zagrałem kamień! ' +
 'Jeśli Twój ruch to papier, to wygrywasz!') {
