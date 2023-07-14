@@ -1,19 +1,27 @@
-let computerMove = `kamień`;
-
-let playerMove = 'papier';
-
 function printMessage(msg) {
     let div = document.createElement('div');
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
 }
-printMessage ('Zagrałem kamień! ' +
-'Jeśli Twój ruch to papier, to wygrywasz!')
 
-
-printMessage('Liczba po zaokrągleniu w dół to: ' + roundNumber);
-function clearMessages(){
+function clearMessages() {
     document.getElementById('messages').innerHTML = '';
 }
 
-console.log(printMessage)
+function randomChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
+}
+
+function getMoveName(argMoveId) {
+    if (argMoveId === "rock") {
+        return 'rock';
+    } else if (argMoveId === "paper") {
+        return 'paper';
+    } else if (argMoveId === "scissors") {
+        return 'scissors';
+    } else {
+        return 'unknown move';
+    }
+}
