@@ -1,21 +1,21 @@
 {
-    function printMessage(msg) {
+    const printMessage = function(msg) {
         let div = document.createElement('div');
         div.innerHTML = msg;
         document.getElementById('messages').appendChild(div);
     }
 
-    function clearMessages() {
+    const clearMessages = function() {
         document.getElementById('messages').innerHTML = '';
     }
 
-    let randomChoice = function () {
+    const randomChoice = function() {
         const choices = ["rock", "paper", "scissors"];
         const randomIndex = Math.floor(Math.random() * choices.length);
         return choices[randomIndex];
     }
 
-    function getMoveName(argMoveId) {
+    const getMoveName = function(argMoveId) {
         if (argMoveId === "rock") {
             return 'rock';
         } else if (argMoveId === "paper") {
@@ -27,7 +27,7 @@
         }
     }
 
-    function displayResult(player, computer) {
+    const displayResult = function(player, computer) {
         const resultDiv = document.getElementById("message");
         let resultText = '';
 
@@ -50,12 +50,11 @@
         printMessage(resultText);
     }
 
-    function clickPlayer(e) {
+    const clickPlayer = function(e) {
         const playerChoice = e.target.id;
         const computerChoice = randomChoice();
         displayResult(playerChoice, computerChoice);
     }
-
     const paperBtn = document.querySelector('#paper');
     const rockBtn = document.querySelector('#rock');
     const scissorsBtn = document.querySelector('#scissors');
@@ -63,4 +62,6 @@
     paperBtn.addEventListener('click', clickPlayer);
     rockBtn.addEventListener('click', clickPlayer);
     scissorsBtn.addEventListener('click', clickPlayer);
+
+
 }
